@@ -1001,3 +1001,86 @@ main {
         margin-top: 20px;
     }
 }
+/* 学习经历部分 */
+.study-experience {
+    margin: 40px 0;
+    max-width: 1600px; /* 限制整个学习经历部分的最大宽度 */
+    margin-left: auto;
+    margin-right: auto; /* 确保居中显示 */
+    padding: 20px;
+}
+
+.study-experience h2 {
+    font-size: 32px;
+    color: #ffcc00;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.study-experience p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    max-width: 1600px; /* 限制段落的最大宽度，确保不会太宽 */
+    margin: 0 auto;
+    text-align: justify; /* 两端对齐，确保段落整齐 */
+}
+
+.experience-item {
+    background-color: #1a1a1d;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    max-width: 1600px; /* 限制每个学习经历项的最大宽度 */
+    margin-left: auto;
+    margin-right: auto; /* 确保居中显示 */
+}
+
+.experience-item h3 {
+    font-size: 24px;
+    color: #ffcc00;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ffcc00;
+    padding-bottom: 5px;
+}
+
+.experience-item p, .experience-item ol, .experience-item ul {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    text-align: justify; /* 文本对齐方式为两端对齐 */
+}
+
+.experience-item ol, .experience-item ul {
+    padding-left: 20px;
+}
+
+.experience-item li {
+    margin-bottom: 10px;
+}
+
+/* 美化链接 */
+a {
+    color: #ffcc00;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #e6b800;
+}
+
+/* 底部样式 */
+footer {
+    background-color: #2c2c2e;
+    color: #eaeaea;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    max-width: 1600px; /* 限制底部内容的最大宽度 */
+    margin-left: auto;
+    margin-right: auto;
+}
+
