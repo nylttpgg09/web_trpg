@@ -15,7 +15,7 @@ body {
 
 /* 主内容容器：类似起点小说的居中效果 */
 .container {
-    max-width: 900px; /* 限制内容区域的最大宽度 */
+    max-width: 1200px; /* 限制内容区域的最大宽度 */
     margin: 0 auto; /* 自动左右外边距，实现居中 */
     padding: 20px;
     background-color: #2c2c2e; /* 内容背景颜色 */
