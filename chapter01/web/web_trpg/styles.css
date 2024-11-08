@@ -1,0 +1,1086 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1d; /* 背景颜色 */
+    color: #eaeaea; /* 亮灰色字体 */
+    line-height: 1.6;
+    padding: 0;
+}
+
+/* 主内容容器：类似起点小说的居中效果 */
+.container {
+    max-width: 1200px; /* 限制内容区域的最大宽度 */
+    margin: 0 auto; /* 自动左右外边距，实现居中 */
+    padding: 20px;
+    background-color: #2c2c2e; /* 内容背景颜色 */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    line-height: 1.8;
+}
+/* 顶部图片样式 */
+.top-image {
+    width: 100%; /* 图片宽度占据整个页面 */
+    max-width: 100vw; /* 让图片最大宽度等于视口宽度 */
+    margin: 0 auto; /* 居中 */
+    overflow: hidden; /* 隐藏多余部分 */
+}
+
+.top-image img {
+    width: 100%; /* 图片宽度自适应页面宽度 */
+    height: auto; /* 高度保持比例 */
+    display: block;
+    max-height: 30vh; /* 最大高度为视口高度的30% */
+}
+
+
+/* 导航栏样式 */
+header {
+    background-color: #2c2c2e; /* 深色导航栏 */
+    padding: 20px;
+    color: #ffcc00;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #e6b800;
+}
+
+/* 日记部分 */
+.diary {
+    background-color: #1a1a1d;  /* 日记区域背景 */
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.diary h3 {
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
+
+.diary p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* 头像框样式 */
+.avatar-frame {
+    position: relative;
+    width: 180px; /* 调整为稍大 */
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 20px auto;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* 添加阴影效果 */
+    transition: transform 0.3s ease;
+}
+
+.avatar-frame:hover {
+    transform: scale(1.05); /* 悬停时轻微放大 */
+}
+
+.avatar-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 确保图片不会拉伸变形 */
+    border-radius: 50%;
+}
+
+/* 头像框颜色样式 */
+.red-frame {
+    border: 5px solid #ff3333;
+    box-shadow: 0 0 15px rgba(255, 51, 51, 0.5); /* 红色光晕 */
+}
+
+.blue-frame {
+    border: 5px solid #3399ff;
+    box-shadow: 0 0 15px rgba(51, 153, 255, 0.5); /* 蓝色光晕 */
+}
+
+.green-frame {
+    border: 5px solid #33cc33;
+    box-shadow: 0 0 15px rgba(51, 204, 51, 0.5); /* 绿色光晕 */
+}
+
+/* 头像框选择器容器样式 */
+.frame-selector {
+    text-align: center;
+    margin: 15px 0;
+    padding: 10px 0;
+    background-color: #2c2c2e; /* 背景颜色与整体协调 */
+    border-radius: 10px; /* 容器圆角 */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* 阴影效果 */
+}
+
+/* 头像框选择按钮样式 */
+.frame-selector button {
+    margin: 5px 10px; /* 缩小按钮间距 */
+    padding: 8px 16px; /* 缩小按钮尺寸 */
+    background: linear-gradient(135deg, #333, #555); /* 渐变背景 */
+    color: #fff;
+    font-size: 14px; /* 较小的字体 */
+    font-weight: bold;
+    border: none;
+    border-radius: 20px; /* 按钮圆角 */
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* 较小的阴影效果 */
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+}
+
+/* 按钮悬停时的效果 */
+.frame-selector button:hover {
+    background: linear-gradient(135deg, #444, #666); /* 悬停时背景变亮 */
+    transform: translateY(-3px); /* 悬停时轻微上移 */
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4); /* 较小的悬停阴影 */
+}
+
+/* 按钮选中时的高亮效果 */
+.frame-selector button.active {
+    background: linear-gradient(135deg, #ffcc00, #ffaa00); /* 高亮的渐变背景 */
+    color: #1a1a1d; /* 选中时的文本颜色 */
+    box-shadow: 0px 6px 12px rgba(255, 204, 0, 0.6); /* 高亮阴影 */
+    transform: scale(1.05); /* 选中时轻微放大 */
+}
+
+/* 按钮点击时的效果 */
+.frame-selector button:active {
+    transform: scale(1); /* 点击时恢复原位 */
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2); /* 阴影减弱 */
+}
+
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .avatar-frame {
+        width: 150px;
+        height: 150px;
+    }
+
+    .frame-selector button {
+        padding: 10px 20px;
+    }
+}
+
+/* 底部样式 */
+footer {
+    background-color: #2c2c2e;
+    color: #eaeaea;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-links img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.social-links img:hover {
+    transform: scale(1.2);
+}
+
+/* 美化游戏部分 */
+.games {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #1e1e1e; /* 深色背景 */
+    color: #eaeaea; /* 浅色字体 */
+}
+
+.games h3 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #ffcc00; /* 亮黄色标题 */
+    text-transform: uppercase; /* 全大写标题 */
+    letter-spacing: 2px; /* 增加字母间距 */
+    border-bottom: 2px solid #ffcc00; /* 标题下划线 */
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.game-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.game-item {
+    background-color: #2c2c2e; /* 卡片背景颜色 */
+    padding: 20px;
+    width: 100%;
+    max-width: 300px; /* 限制卡片宽度 */
+    border-radius: 15px; /* 圆角 */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* 卡片阴影 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.game-item img {
+    width: 100%;
+    border-radius: 10px; /* 图片圆角 */
+    margin-bottom: 15px;
+}
+
+.game-item h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #ffcc00; /* 游戏标题颜色 */
+}
+
+.game-item p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #eaeaea; /* 描述文本颜色 */
+}
+
+.game-item .details-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: #1e1e1e;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.game-item .details-button:hover {
+    background-color: #e6b800;
+    color: #fff;
+}
+
+/* 卡片的悬停效果 */
+.game-item:hover {
+    transform: scale(1.05); /* 悬停时放大效果 */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6); /* 加强悬停时的阴影效果 */
+}
+/* 克苏鲁神话背景部分 */
+.lore {
+    background-color: #1e1e1e; /* 深色背景 */
+    padding: 40px 20px;
+    text-align: center;
+    color: #eaeaea;
+    margin-bottom: 40px;
+    border-radius: 10px; /* 圆角效果 */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* 阴影效果 */
+}
+
+.lore h3 {
+    font-size: 36px;
+    color: #ffcc00; /* 标题亮黄色 */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.lore p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    max-width: 800px; /* 限制文本区域宽度 */
+    margin: 0 auto; /* 居中文本 */
+}
+
+.lore img {
+    width: 100%;
+    max-width: 400px; /* 限制图片最大宽度 */
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6); /* 图片阴影 */
+}
+
+/* 推荐外神部分 */
+.recommendations {
+    background-color: #2c2c2e;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* 阴影效果 */
+}
+
+.recommendations h3 {
+    font-size: 36px;
+    color: #ffcc00; /* 标题亮黄色 */
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.recommend-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.recommend-item {
+    background-color: #1a1a1d; /* 卡片背景色 */
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recommend-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.recommend-item h4 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #ffcc00; /* 标题亮黄色 */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.recommend-item p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #eaeaea;
+}
+
+/* 悬停效果 */
+.recommend-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+/* Hero 部分样式 */
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('images/cthulhu_background.jpg'); /* 渐变和背景图片结合 */
+    background-size: cover;
+    background-position: center;
+    padding: 120px 20px;
+    text-align: center;
+    color: #eaeaea;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* 阴影效果 */
+}
+
+/* 标题样式 */
+.hero h2 {
+    font-size: 48px;
+    color: #ffcc00;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease-in-out; /* 淡入动画 */
+}
+
+/* 描述文本样式 */
+.hero p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* CTA按钮样式 */
+.cta-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: #ffcc00;
+    color: #1a1a1d;
+    border-radius: 50px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+/* CTA按钮悬停效果 */
+.cta-button:hover {
+    background-color: #e6b800;
+    color: #fff;
+    transform: scale(1.1); /* 悬停放大效果 */
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header 样式 */
+header {
+    background: linear-gradient(135deg, #1e1e1e, #2c2c2e); /* 背景渐变效果 */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 添加阴影 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo 样式 */
+.logo h1 {
+    font-size: 32px;
+    color: #ffcc00; /* 亮黄色字体 */
+    font-family: 'Georgia', serif; /* 高级感字体 */
+    text-transform: uppercase; /* 字母大写 */
+    letter-spacing: 2px; /* 字母间距 */
+    margin: 0;
+}
+
+/* 导航栏样式 */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* 增加菜单项之间的间距 */
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+/* 导航链接样式 */
+nav ul li a {
+    color: #eaeaea;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #ffcc00; /* 悬停时背景变为黄色 */
+    color: #1e1e1e; /* 悬停时文字颜色变深 */
+    transform: scale(1.1); /* 悬停时轻微放大 */
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+/* 学习板块样式 */
+.learning {
+    background-color: #1e1e1e; /* 深色背景 */
+    padding: 40px 20px;
+    text-align: center;
+    color: #eaeaea;
+    border-radius: 10px; /* 圆角 */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* 添加阴影效果 */
+    margin-bottom: 40px;
+}
+
+.learning h3 {
+    font-size: 36px;
+    color: #ffcc00; /* 标题亮黄色 */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px; /* 增加字母间距 */
+    border-bottom: 2px solid #ffcc00;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.learning p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 学习资源部分样式 */
+.learning-resources {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.resource-item {
+    background-color: #2c2c2e;
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 15px; /* 卡片圆角 */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* 添加阴影 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    overflow: hidden;
+}
+
+.resource-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.resource-item h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #ffcc00;
+}
+
+.resource-item p {
+    font-size: 16px;
+    color: #eaeaea;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* 悬停时图片和卡片动画 */
+.resource-item:hover {
+    transform: scale(1.05); /* 悬停时卡片放大效果 */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6); /* 悬停时加深阴影 */
+}
+
+.resource-item:hover img {
+    transform: scale(1.1); /* 图片悬停时放大效果 */
+}
+
+/* 按钮样式 */
+.details-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: #1e1e1e;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.details-button:hover {
+    background-color: #e6b800;
+    color: #fff;
+    transform: scale(1.1); /* 悬停时按钮放大效果 */
+}
+/* 日记簿部分样式 */
+.diary {
+    background-color: #1e1e1e;
+    padding: 40px 20px;
+    margin: 40px 0;
+    border-radius: 10px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.diary h3 {
+    font-size: 36px;
+    color: #ffcc00;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.diary-entry {
+    margin-bottom: 30px;
+    color: #eaeaea;
+}
+
+.diary-entry h4 {
+    font-size: 24px;
+    color: #ffcc00;
+    margin-bottom: 15px;
+}
+
+.diary-entry blockquote {
+    background-color: #2c2c2e;
+    border-left: 5px solid #ffcc00;
+    padding: 20px;
+    margin: 20px 0;
+    color: #eaeaea;
+    font-style: italic;
+    border-radius: 5px;
+}
+
+.character-highlight {
+    margin-bottom: 20px;
+}
+
+.character-highlight h5 {
+    font-size: 20px;
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
+
+/* 比赛经历表单样式 */
+form {
+    margin-bottom: 20px;
+    background-color: #2c2c2e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #ffcc00;
+    font-size: 18px;
+  }
+  
+  form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #1e1e1e;
+    color: #eaeaea;
+  }
+  
+  form button {
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: #1a1a1d;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  form button:hover {
+    background-color: #e6b800;
+  }
+  
+  /* 比赛文章样式 */
+  #articles {
+    margin-top: 40px;
+  }
+  
+  #articles h3 {
+    color: #ffcc00;
+    margin-bottom: 10px;
+  }
+  
+  #articles p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #eaeaea;
+  }
+  
+  #articles hr {
+    border: 0;
+    height: 1px;
+    background: #ffcc00;
+    margin: 20px 0;
+  }
+  
+  /* 自定义的板块样式 */
+  .article-section {
+    background-color: #1e1e1e;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .article-section h3 {
+    color: #ffcc00;
+    margin-bottom: 10px;
+  }
+  
+  .article-section p {
+    color: #eaeaea;
+    margin-bottom: 10px;
+  }
+  
+  .article-section:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+  }
+  
+  /* 调整比赛表单及文章在移动设备的响应式设计 */
+  @media (max-width: 768px) {
+    form {
+      padding: 10px;
+    }
+  
+    form label, form input, form textarea {
+      font-size: 16px;
+    }
+  
+    form button {
+      padding: 8px 15px;
+    }
+  
+    #articles h3 {
+      font-size: 20px;
+    }
+  
+    #articles p {
+      font-size: 16px;
+    }
+  }
+
+/* 回到顶部和回到底部按钮样式 */
+#back-to-top,
+#back-to-bottom {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 30px;
+    z-index: 99;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* 深色渐变背景 */
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    align-items: center;
+    justify-content: center;
+}
+
+#back-to-bottom {
+    bottom: 20px; /* 调整“回到底部”按钮的位置 */
+}
+
+#back-to-top.show,
+#back-to-bottom.show {
+    display: flex; /* 显示时设置为flex布局，以便居中图标 */
+}
+
+/* 按钮的悬停效果 */
+#back-to-top:hover,
+#back-to-bottom:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    transform: scale(1.1); /* 放大效果 */
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+}
+
+/* 图标样式 */
+#back-to-top i,
+#back-to-bottom i {
+    font-size: 24px;
+}
+
+/* 添加动画 */
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 15px rgba(0, 255, 255, 1);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+    }
+}
+#back-to-top.show,
+#back-to-bottom.show {
+    /* 之前的样式 */
+    animation: fadeInUp 0.5s, pulse 2s infinite;
+}
+
+
+
+#scroll-percentage {
+    position: fixed;
+    top: 50%; /* 垂直居中 */
+    right: 20px; /* 距离页面右侧20px */
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.7); /* 半透明背景 */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    z-index: 100;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.6); /* 添加神秘的光影效果 */
+    transition: all 0.3s ease;
+    display: none; /* 初始状态隐藏 */
+}
+
+#scroll-percentage.show {
+    display: block;
+}
+
+/* 布局容器：将主内容和侧边栏放在一个flex容器内 */
+.content-container {
+    display: flex;
+    max-width: 1500px; /* 最大宽度 */
+    margin: 0 auto; /* 居中 */
+    padding: 20px;
+    gap: 20px; /* 主内容与侧边栏的间距 */
+}
+/* 主内容 */
+main {
+    flex: 6; /* 主内容占5份空间 */
+    padding: 20px;
+    background-color: #2c2c2e;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+/* 侧边栏 */
+.sidebar {
+    flex: 1; /* 侧边栏占1份空间 */
+    background-color: #1a1a1d; /* 与背景一致 */
+    padding: 20px;
+}
+
+/* 侧边栏部分样式 */
+.sidebar-section {
+    margin-bottom: 20px;
+}
+
+.sidebar-section h3 {
+    font-size: 24px;
+    color: #ffcc00;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ffcc00;
+    padding-bottom: 5px;
+}
+
+.sidebar-section p, 
+.sidebar-section ul li a {
+    font-size: 16px;
+    color: #eaeaea;
+    line-height: 1.6;
+}
+
+/* 响应式设计：当屏幕宽度较小时，将侧边栏放到内容下方 */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        margin-top: 20px;
+    }
+}
+
+/* 侧边栏每个部分的样式 */
+.sidebar-section {
+    margin-bottom: 40px;
+}
+
+.sidebar-section h3 {
+    font-size: 24px;
+    color: #ffcc00; /* 标题亮黄色 */
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ffcc00; /* 底部下划线 */
+    padding-bottom: 10px;
+    text-transform: uppercase; /* 字母大写 */
+}
+
+.sidebar-section p, 
+.sidebar-section ul li a {
+    font-size: 16px;
+    color: #eaeaea;
+    line-height: 1.8;
+}
+
+/* 列表中的链接样式 */
+.sidebar-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar-section ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar-section ul li a {
+    text-decoration: none;
+    color: #ffcc00; /* 链接颜色 */
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.sidebar-section ul li a:hover {
+    color: #e6b800;
+    transform: translateX(5px); /* 悬停时轻微右移 */
+}
+
+/* 标签样式 */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    background-color: #444;
+    color: #ffcc00;
+    padding: 8px 12px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tag:hover {
+    background-color: #ffcc00;
+    color: #1a1a1d;
+}
+
+/* 社交图标样式 */
+.social-links {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.social-links img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.social-links img:hover {
+    transform: scale(1.2); /* 悬停时放大图标 */
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}
+/* 学习经历部分 */
+.study-experience {
+    margin: 40px 0;
+    max-width: 1600px; /* 限制整个学习经历部分的最大宽度 */
+    margin-left: auto;
+    margin-right: auto; /* 确保居中显示 */
+    padding: 20px;
+}
+
+.study-experience h2 {
+    font-size: 32px;
+    color: #ffcc00;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.study-experience p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    max-width: 1600px; /* 限制段落的最大宽度，确保不会太宽 */
+    margin: 0 auto;
+    text-align: justify; /* 两端对齐，确保段落整齐 */
+}
+
+.experience-item {
+    background-color: #1a1a1d;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    max-width: 1600px; /* 限制每个学习经历项的最大宽度 */
+    margin-left: auto;
+    margin-right: auto; /* 确保居中显示 */
+}
+
+.experience-item h3 {
+    font-size: 24px;
+    color: #ffcc00;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ffcc00;
+    padding-bottom: 5px;
+}
+
+.experience-item p, .experience-item ol, .experience-item ul {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    text-align: justify; /* 文本对齐方式为两端对齐 */
+}
+
+.experience-item ol, .experience-item ul {
+    padding-left: 20px;
+}
+
+.experience-item li {
+    margin-bottom: 10px;
+}
+
+/* 美化链接 */
+a {
+    color: #ffcc00;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #e6b800;
+}
+
+/* 底部样式 */
+footer {
+    background-color: #2c2c2e;
+    color: #eaeaea;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    max-width: 1600px; /* 限制底部内容的最大宽度 */
+    margin-left: auto;
+    margin-right: auto;
+}
+

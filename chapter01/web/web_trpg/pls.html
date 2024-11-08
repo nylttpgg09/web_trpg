@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>跑团模拟器</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #2c2c2c;
+      color: #f8f8f2;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      color: #ff79c6;
+    }
+    .result, .character-card {
+      background-color: #44475a;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 0;
+      font-size: 1.5em;
+    }
+    button {
+      background-color: #6272a4;
+      color: #f8f8f2;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #50fa7b;
+    }
+    .attribute {
+      margin: 10px 0;
+    }
+    input {
+      padding: 10px;
+      margin: 5px;
+      border-radius: 5px;
+      width: 80px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<h1>跑团模拟器</h1>
+<nav>
+  <ul>
+    <li><a href="index.html">首页</a></li>
+    <li><a href="login2_3.jsp">登录</a></li>
+  </ul>
+</nav>
+
+
+<div id="attributesContainer">
+  <div class="attribute">
+    <input type="text" placeholder="属性名" class="attributeName" />
+    <input type="number" placeholder="属性值" class="attributeValue" min="1" />
+    <button class="removeAttributeButton">删除</button>
+  </div>
+</div>
+
+<button id="addAttributeButton">添加属性</button>
+<button id="rollButton">生成随机数</button>
+<button id="generateCardButton">生成属性</button>
+
+<div class="result" id="resultDisplay">结果将显示在这里</div>
+<div class="character-card" id="characterCardDisplay" style="display: none;"></div>
+
+<script>
+  document.getElementById('addAttributeButton').onclick = function() {
+    const newAttributeDiv = document.createElement('div');
+    newAttributeDiv.className = 'attribute';
+    newAttributeDiv.innerHTML = `
+      <input type="text" placeholder="属性名" class="attributeName" />
+      <input type="number" placeholder="属性值" class="attributeValue" min="1" />
+      <button class="removeAttributeButton">删除</button>
+    `;
+    document.getElementById('attributesContainer').appendChild(newAttributeDiv);
+
+    // 给新按钮添加事件
+    newAttributeDiv.querySelector('.removeAttributeButton').onclick = function() {
+      newAttributeDiv.remove();
+    };
+  };
+
+  document.getElementById('rollButton').onclick = function() {
+    const attributes = document.querySelectorAll('.attribute');
+    const results = [];
+
+    attributes.forEach(attribute => {
+      const name = attribute.querySelector('.attributeName').value;
+      const value = parseInt(attribute.querySelector('.attributeValue').value);
+      const randomNumber = Math.floor(Math.random() * 100) + 1;
+
+      let resultMessage;
+
+      if (randomNumber > value) {
+        resultMessage = `${name}：失败！结果是 ${randomNumber}，超过了设定属性 ${value}。`;
+      } else {
+        const difference = value - randomNumber;
+        if (difference === 0) {
+          resultMessage = `${name}：完美成功！结果是 ${randomNumber}。`;
+        } else if (difference <= 5) {
+          resultMessage = `${name}：成功，差距很小！结果是 ${randomNumber}。`;
+        } else if (difference <= 10) {
+          resultMessage = `${name}：成功，结果不错！结果是 ${randomNumber}。`;
+        } else {
+          resultMessage = `${name}：成功，表现出色！结果是 ${randomNumber}。`;
+        }
+      }
+
+      results.push(resultMessage);
+    });
+
+    document.getElementById('resultDisplay').innerText = results.join('\n');
+  };
+
+  document.getElementById('generateCardButton').onclick = function() {
+    const attributes = document.querySelectorAll('.attribute');
+    let cardContent = "角色车卡：\n\n";
+
+    attributes.forEach(attribute => {
+      const name = attribute.querySelector('.attributeName').value;
+      const value = parseInt(attribute.querySelector('.attributeValue').value);
+      cardContent += `${name}：${value}\n`;
+    });
+
+    cardContent += "\n随机结果生成的车卡。";
+
+    const cardDisplay = document.getElementById('characterCardDisplay');
+    cardDisplay.innerText = cardContent;
+    cardDisplay.style.display = 'block';
+  };
+</script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebContextManager">
+    <option name="state">
+      <map>
+        <entry key="file://$PROJECT_DIR$/web/chapter02/js1.jsp" value="file://$PROJECT_DIR$/web/chapter02" />
+        <entry key="file://$PROJECT_DIR$/web/chapter02/js7.jsp" value="file://$PROJECT_DIR$/web/chapter02" />
+        <entry key="file://$PROJECT_DIR$/web/chapter02/jsp2.jsp" value="file://$PROJECT_DIR$/web/chapter02" />
+        <entry key="file://$PROJECT_DIR$/web/chapter03/1-2.jsp" value="file://$PROJECT_DIR$/web/chapter03" />
+        <entry key="file://$PROJECT_DIR$/web/chapter03/addToCart.jsp" value="file://$PROJECT_DIR$/web/chapter03" />
+        <entry key="file://$PROJECT_DIR$/web/chapter03/jdbc1.jsp" value="file://$PROJECT_DIR$/web/chapter03" />
+        <entry key="file://$PROJECT_DIR$/web/chapter03/login.jsp" value="file://$PROJECT_DIR$/web/chapter03" />
+        <entry key="file://$PROJECT_DIR$/web/inde.jsp" value="file://$PROJECT_DIR$/web" />
+        <entry key="file://$PROJECT_DIR$/web/web_trpg/investigator_diary.html" value="file://$PROJECT_DIR$/web/web_trpg" />
+        <entry key="file://$PROJECT_DIR$/web/web_trpg/investigator_diary.jsp" value="file://$PROJECT_DIR$/web/web_trpg" />
+        <entry key="file://$PROJECT_DIR$/web/web_trpg/login1_3.jsp" value="file://$PROJECT_DIR$/web/web_trpg" />
+        <entry key="file://$PROJECT_DIR$/web/web_trpg/register.jsp" value="file://$PROJECT_DIR$/web/web_trpg" />
+      </map>
+    </option>
+  </component>
+</project>

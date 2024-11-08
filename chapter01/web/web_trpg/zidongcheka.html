@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>角色卡生成器</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #0e0e0e; /* 更暗的背景 */
+      color: #f8f8f2;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.6;
+      background-image: url('https://example.com/dark_background_pattern.png'); /* 背景图案 */
+      background-size: cover;
+    }
+    h1 {
+      text-align: center;
+      color: #ff79c6; /* 紫色 */
+      font-size: 3em;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* 添加阴影 */
+      border-bottom: 2px solid #6272a4; /* 蓝色底线 */
+      padding-bottom: 10px;
+    }
+    .form-container {
+      max-width: 600px;
+      margin: auto;
+      background-color: #272727; /* 深色背景 */
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+      padding: 30px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 1.2em;
+      color: #50fa7b; /* 绿色 */
+    }
+    input[type="text"],
+    textarea {
+      width: calc(100% - 20px);
+      padding: 12px;
+      border: 1px solid #6272a4; /* 蓝色边框 */
+      border-radius: 5px;
+      background-color: #44475a; /* 深色背景 */
+      color: #f8f8f2;
+      margin-bottom: 15px;
+      transition: border-color 0.3s;
+    }
+    input[type="text"]:focus,
+    textarea:focus {
+      border-color: #50fa7b; /* 聚焦时的绿色边框 */
+    }
+    textarea {
+      resize: none; /* 禁止手动调整大小 */
+      height: 80px; /* 高度固定 */
+    }
+    button {
+      background-color: #6272a4; /* 蓝色 */
+      color: #f8f8f2;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s;
+      font-size: 1.2em;
+      margin-right: 10px; /* 添加右边距 */
+    }
+    button:hover {
+      background-color: #44475a; /* 深色 */
+      transform: translateY(-2px); /* 上移效果 */
+    }
+    .result {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 1.5em;
+      color: #50fa7b; /* 绿色 */
+      border: 1px solid #6272a4; /* 蓝色边框 */
+      padding: 15px;
+      border-radius: 5px;
+      background-color: #1c1c1c; /* 深色背景 */
+    }
+    .attribute {
+      margin: 10px 0;
+    }
+    input.attributeName,
+    input.attributeValue {
+      width: 45%; /* 调整宽度 */
+      margin-right: 10px;
+    }
+    input.attributeValue {
+      margin-right: 0; /* 去掉右边距 */
+    }
+    #addAttributeButton {
+      background-color: #ff79c6; /* 添加属性按钮颜色 */
+    }
+    #addAttributeButton:hover {
+      background-color: #ff92e3; /* 悬停颜色 */
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>角色卡生成</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">首页</a></li>
+      <li><a href="login2_3.jsp">登录</a></li>
+    </ul>
+  </nav>
+</header>
+<div class="form-container">
+  <form id="charForm">
+    <label for="name">人物名称：</label>
+    <input type="text" id="name" required>
+
+    <label for="location">居住地：</label>
+    <input type="text" id="location" required>
+
+    <label for="age">年龄：</label>
+    <input type="text" id="age" required>
+
+    <label for="hair">发型：</label>
+    <input type="text" id="hair" required>
+
+    <label for="eyes">眼睛：</label>
+    <input type="text" id="eyes" required>
+
+    <label for="occupation">职业：</label>
+    <input type="text" id="occupation" required>
+
+    <label for="description">个人描述：</label>
+    <textarea id="description" required></textarea>
+
+    <label for="belief">思想信念：</label>
+    <textarea id="belief" required></textarea>
+
+    <label for="important">重要之人：</label>
+    <textarea id="important" required></textarea>
+
+    <label for="importantReason">重要之人理由：</label>
+    <textarea id="importantReason" required></textarea>
+
+    <label for="meaningfulPlace">意义非凡之地：</label>
+    <textarea id="meaningfulPlace" required></textarea>
+
+    <label for="valuableItem">宝贵之物：</label>
+    <textarea id="valuableItem" required></textarea>
+
+    <label for="feature">特点：</label>
+    <textarea id="feature" required></textarea>
+
+    <label for="secret">难言之隐：</label>
+    <textarea id="secret"></textarea>
+
+    <label for="advantage">优点：</label>
+    <textarea id="advantage"></textarea>
+
+    <label for="disadvantage">缺点：</label>
+    <textarea id="disadvantage"></textarea>
+
+    <label for="experience">经历：</label>
+    <textarea id="experience" required></textarea>
+
+    <label for="optionalTraits">阁下的可选特性是：</label>
+    <textarea id="optionalTraits"></textarea>
+
+    <label for="otherLanguages">其他语言:</label>
+    <textarea id="otherLanguages"></textarea>
+
+    <button type="button" id="addAttributeButton">添加属性</button>
+    <div id="attributesContainer">
+      <p>常见属性为：力量,敏捷,灵感,智力,智慧,幸运,体型,体质,外貌</p>
+      <div class="attribute">
+        <input type="text" placeholder="属性名" class="attributeName" />
+        <input type="number" placeholder="属性值" class="attributeValue" min="1" />
+        <button class="removeAttributeButton">删除</button>
+      </div>
+    </div>
+
+    <button type="submit">生成角色卡</button>
+    <button type="button" id="exportButton">导出角色卡</button>
+  </form>
+
+  <div class="result" id="result"></div>
+</div>
+
+<script>
+  document.getElementById('addAttributeButton').onclick = function() {
+    const newAttributeDiv = document.createElement('div');
+    newAttributeDiv.className = 'attribute';
+    newAttributeDiv.innerHTML = `
+      <input type="text" placeholder="属性名" class="attributeName" />
+      <input type="number" placeholder="属性值" class="attributeValue" min="1" />
+      <button class="removeAttributeButton">删除</button>
+    `;
+    document.getElementById('attributesContainer').appendChild(newAttributeDiv);
+
+    // 给新按钮添加事件
+    newAttributeDiv.querySelector('.removeAttributeButton').onclick = function() {
+      newAttributeDiv.remove();
+    };
+  };
+
+  document.getElementById('charForm').onsubmit = function(e) {
+    e.preventDefault();
+    const result = generateCharacterCard();
+    document.getElementById('result').innerHTML = result;
+  };
+
+  document.getElementById('exportButton').onclick = function() {
+    const result = generateCharacterCard();
+    const blob = new Blob([result], { type: 'text/plain' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = '角色卡.txt';
+    link.click();
+  };
+
+  function generateCharacterCard() {
+    let result = `
+      人物名称: ${document.getElementById('name').value}\n
+      居住地: ${document.getElementById('location').value}\n
+      年龄: ${document.getElementById('age').value}\n
+      发型: ${document.getElementById('hair').value}\n
+      眼睛: ${document.getElementById('eyes').value}\n
+      职业: ${document.getElementById('occupation').value}\n
+      个人描述: ${document.getElementById('description').value}\n
+      思想信念: ${document.getElementById('belief').value}\n
+      重要之人: ${document.getElementById('important').value}\n
+      重要之人理由: ${document.getElementById('importantReason').value}\n
+      意义非凡之地: ${document.getElementById('meaningfulPlace').value}\n
+      宝贵之物: ${document.getElementById('valuableItem').value}\n
+      特点: ${document.getElementById('feature').value}\n
+      难言之隐: ${document.getElementById('secret').value}\n
+      优点: ${document.getElementById('advantage').value}\n
+      缺点: ${document.getElementById('disadvantage').value}\n
+      经历: ${document.getElementById('experience').value}\n
+      阁下的可选特性是: ${document.getElementById('optionalTraits').value}\n
+      其他语言: ${document.getElementById('otherLanguages').value}\n
+    `;
+
+    const attributes = document.querySelectorAll('.attribute');
+    if (attributes.length > 0) {
+      result += '\n自定义属性:\n';
+      attributes.forEach(attribute => {
+        const name = attribute.querySelector('.attributeName').value;
+        const value = attribute.querySelector('.attributeValue').value;
+        result += `${name}: ${value}\n`;
+      });
+    }
+
+    return result;
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>比赛经历</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>比赛经历</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="login2_3.jsp">登录</a></li>
+                <li><a href="investigator_diary.jsp">调查员日记</a></li>
+            </ul>
+        </nav>
+    </header>
+  <!-- 表单，用于添加新的比赛文章 -->
+  <form id="competitionForm">
+    <label for="title">比赛标题:</label>
+    <input type="text" id="title" name="title" required>
+
+    <label for="category">比赛类别:</label>
+    <input type="text" id="category" name="category" required>
+
+    <label for="content">文章内容:</label>
+    <textarea id="content" name="content" required></textarea>
+
+    <button type="submit">添加文章</button>
+  </form>
+
+  <!-- 显示添加的比赛文章 -->
+  <div id="articleList">
+    <h2>文章列表</h2>
+    <p>国信安网页设计大赛-校级三等奖</p>
+    <p>ACM国际大学生程序设计竞赛-ccpc预选赛参与奖</p>
+    <p>蓝桥杯-省三</p>
+    <p>LeetCode 周赛 / 双周赛</p>
+    <div id="articles"></div>
+  </div>
+
+  <script src="competition.js"></script>
+</body>
+</html>
